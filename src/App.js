@@ -8,13 +8,12 @@ const products = [
   {id: 1, name: 'DENIM', price: 10, image: chinos},
   {id: 2, name: 'AMERICAN POLO', price: 9.30, image: shirts},
   {id: 3, name: 'NIKE', price: 35, image: shoes},
-
 ];
 
 function App() {
   const [cart, setCart] = useState([]);
 
-  const addTocart = (productId) => {
+  const addToCart = (productId) => {
     const selectedProduct = products.find(product => product.id === productId);
     if (selectedProduct){
       setCart([...cart, selectedProduct]);
@@ -32,14 +31,14 @@ function App() {
         <h1> Commerce Store </h1>
       </header>
       <section className='App-products'>
-        {products.map(product => {
+        {products.map(product => (
           <div key={product.id} className='App-product'>
             <img src={product.image} alt={product.name} style={{width: '100%' , height: 'auto'}} />
             <h3> {product.name} </h3>
             <p> ${product.price} </p>
-            <button onClick={() => addTocart(product.id)}>Add to Cart</button>
+            <button onClick={() => addToCart(product.id)}>Add to Cart</button>
           </div>
-        })}
+        ))}
       </section>
       <section className='App-cart'>
         <h2>Shopping Cart</h2>

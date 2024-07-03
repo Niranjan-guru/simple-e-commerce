@@ -36,7 +36,7 @@ function App() {
             <img src={product.image} alt={product.name} style={{width: '100%' , height: 'auto'}} />
             <h3> {product.name} </h3>
             <p> ${product.price} </p>
-            <button onClick={() => addToCart(product.id)}>Add to Cart</button>
+            <button onClick={() => addToCart(product.id) }>Add to Cart</button>
           </div>
         ))}
       </section>
